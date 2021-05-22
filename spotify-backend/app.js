@@ -137,23 +137,24 @@ app.get('/refresh_token', function(req, res) {
 
 app.get('/top_tracks', function(req, res) {
 
-  var access_token = req.query.access_token;
+  var refresh_token = req.query.access_token;
   var authOptions = {
     url: 'https://api.spotify.com/v1/me/top/tracks',
-    headers: { 'Authorization': 'Bearer ' + access_token },
-    form: {
-      grant_type: 'refresh_token',
-      refresh_token: refresh_token
-    },
+    headers: { 'Authorization': 'Bearer ' + (new Buffer(client_id + ':' + client_secret).toString('base64')) },
     json: true
   };
 
+  
   request.post(authOptions, function(error, response, body) {
+    console.log("start the auth?")
+    console.log(response.statusCode)
     if (!error && response.statusCode === 200) {
       var access_token = body.access_token;
       res.send({
         'access_token': access_token
       });
+
+      console.log("it worked?")
     }
   });
 
