@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../styles/Hero.module.css";
 import Image from "next/image";
 
-const Hero = () => {
+function millisecondsToHoursAndMinutes(millis) {
+  var hours = Math.floor(millis / (1000 * 60 * 60));
+  var minutes = ((millis % (1000 * 60 * 60)) / (1000 * 60)).toFixed(0);
+
+  return hours + " hr " + minutes + " min";
+}
+
+const Hero = ({ time }) => {
   return (
     <div className={styles.hero}>
       <div className={styles.image}>
@@ -13,7 +20,8 @@ const Hero = () => {
         <h1>Your Top Songs</h1>
         <p>The songs you loved most, all wrapped up.</p>
         <p>
-          <span>Spotify</span> &#183; 100 songs, 5 hr 38 min
+          <span>Spotify</span> &#183; 50 songs,{" "}
+          {millisecondsToHoursAndMinutes(time)}
         </p>
       </div>
     </div>

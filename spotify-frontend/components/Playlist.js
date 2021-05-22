@@ -3,7 +3,36 @@ import styles from "../styles/Playlist.module.css";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import Song from "./Song";
 
-const Playlist = () => {
+function millisToMinutesAndSeconds(millis) {
+  var minutes = Math.floor(millis / 60000);
+  var seconds = ((millis % 60000) / 1000).toFixed(0);
+  return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+}
+
+const Playlist = ({ tracks }) => {
+  const renderedTracks = tracks
+    ? tracks.map((track, index) => {
+        const date = new Date();
+        return (
+          <Song
+            number={index + 1}
+            singer={track.artists[0].name}
+            title={track.name}
+            album={track.album.name}
+            imgUrl={track.album.images[2].url}
+            date={
+              date.toLocaleString("default", { month: "short" }) +
+              " " +
+              date.getDate() +
+              ", " +
+              date.getFullYear()
+            }
+            time={millisToMinutesAndSeconds(track.duration_ms)}
+            key={index}
+          />
+        );
+      })
+    : null;
   return (
     <div className={styles.playlist}>
       <table className={styles.table}>
@@ -18,24 +47,7 @@ const Playlist = () => {
             </th>
           </tr>
         </thead>
-        <tbody>
-          <Song
-            number="1"
-            singer="ITZY"
-            title="DALLA DALLA"
-            album="IT'z Different"
-            date="Nov 27, 2020"
-            time="3:19"
-          />
-          <Song
-            number="1"
-            singer="ITZY"
-            title="DALLA DALLA"
-            album="IT'z Different"
-            date="Nov 27, 2020"
-            time="3:19"
-          />
-        </tbody>
+        <tbody>{renderedTracks}</tbody>
       </table>
     </div>
   );

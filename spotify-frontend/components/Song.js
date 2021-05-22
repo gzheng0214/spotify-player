@@ -1,15 +1,14 @@
 import React from "react";
 import styles from "../styles/Song.module.css";
-import Image from "next/image";
 
-const Song = ({ number, title, singer, album, date, time }) => {
+const Song = ({ number, title, singer, album, date, time, imgUrl }) => {
   return (
     <tr className={styles.song}>
       <td>{number}</td>
       <td>
         <div>
           <div className={styles.image}>
-            <Image src="/images/dalla.png" layout="fill" />
+            <img src={imgUrl} />
           </div>
           <div className={styles.title}>
             <span>{title}</span>
