@@ -1,0 +1,53 @@
+.hero {
+  height: 340px;
+  background: linear-gradient(
+    to bottom,
+    rgb(149, 234, 218),
+    rgba(53, 83, 77, 0.8)
+  );
+  display: flex;
+}
+
+.image {
+  min-width: 233px;
+  height: 233px;
+  margin: 80px 23px 0 25px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.image img {
+  object-fit: cover;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  height: 180px;
+  min-width: 870px;
+  justify-content: space-between;
+  margin-top: 138px;
+}
+
+.text > span {
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.text h1 {
+  color: white;
+  font-size: 70px;
+  margin: 0;
+}
+
+.text p {
+  color: rgb(192, 211, 208);
+  font-size: 14px;
+}
+
+.text p span {
+  color: white;
+  font-weight: 700;
+}

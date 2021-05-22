@@ -1,0 +1,94 @@
+.playlist {
+  height: 1000px;
+  background: linear-gradient(
+    to bottom,
+    rgb(49, 74, 70),
+    rgb(18, 18, 18) 230px,
+    rgb(18, 18, 18)
+  );
+  padding: 30px 23px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  color: rgb(179, 179, 179);
+  text-transform: uppercase;
+  font-size: 13px;
+  padding: 10px 0;
+}
+
+.table th:first-child {
+  font-size: 15px;
+}
+
+.table th:last-child {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 50px;
+}
+
+.table thead {
+  border-bottom: 1px solid rgba(179, 179, 179, 0.3);
+}
+
+.table thead tr th:first-child,
+.table tbody tr td:first-child {
+  width: 60px;
+  min-width: 60px;
+  max-width: 60px;
+}
+
+.table thead tr th:nth-child(2),
+.table tbody tr td:nth-child(2) {
+  text-align: left;
+  width: 700px;
+  min-width: 700px;
+  max-width: 700px;
+}
+
+.table thead tr th:nth-child(3),
+.table tbody tr td:nth-child(3) {
+  text-align: left;
+  width: 500px;
+  min-width: 500px;
+  max-width: 500px;
+}
+
+.table thead tr th:nth-child(4),
+.table tbody tr td:nth-child(4) {
+  text-align: left;
+  width: 410px;
+  min-width: 410px;
+  max-width: 410px;
+}
+
+.table tbody tr td:last-child {
+  text-align: right;
+  padding-right: 50px;
+}
+
+.table tbody:before {
+  content: "@";
+  display: block;
+  line-height: 15px;
+  text-indent: -99999px;
+}
+
+.table tbody tr {
+  height: 55px;
+}
+
+.table tbody tr td {
+  font-size: 15px;
+  color: rgb(179, 179, 179);
+}
+
+.table tbody tr:hover {
+  background-color: rgb(50, 57, 57);
+}

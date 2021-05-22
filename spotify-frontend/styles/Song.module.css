@@ -1,0 +1,28 @@
+.image {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin-right: 15px;
+}
+
+.image img {
+  object-fit: cover;
+}
+
+.song {
+  text-align: center;
+}
+
+.song td:nth-child(2) > div {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+}
+
+.title > span:nth-child(1) {
+  color: rgb(255, 255, 255);
+}
