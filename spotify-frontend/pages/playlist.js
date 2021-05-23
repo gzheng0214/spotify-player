@@ -30,7 +30,6 @@ export default function Songs() {
       totalTime += track.duration_ms;
     });
     setTime(totalTime);
-    console.log(time);
   };
 
   useEffect(() => {
