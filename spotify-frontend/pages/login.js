@@ -3,7 +3,7 @@ import styles from "../styles/login.module.css";
 import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 
-const client_id = "10eaf75dd701485dacd2c81725bf8144"; // Your client id
+const client_id = process.env.CLIENT_ID; // Your client id
 const redirect_uri = "http://localhost:3000/playlist"; // Your redirect uri
 const scopes = "user-top-read";
 
